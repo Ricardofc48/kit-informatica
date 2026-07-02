@@ -1,7 +1,3 @@
-/* =============================================
-   Kit de Informática 2026 — Estilos
-   ============================================= */
-
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
@@ -16,7 +12,6 @@ body {
   margin: 0 auto;
 }
 
-/* ---- HERO ---- */
 .hero {
   background: linear-gradient(135deg, #0f1b35 0%, #1a2d5a 60%, #0d3b6e 100%);
   border-radius: 16px 16px 0 0;
@@ -83,7 +78,6 @@ body {
 }
 .cta-btn:hover { background: #0060c0; }
 
-/* ---- SECCIÓN LABEL ---- */
 .section-label {
   font-size: 10px;
   font-weight: 700;
@@ -93,7 +87,21 @@ body {
   margin-bottom: 16px;
 }
 
-/* ---- CONTENIDO ---- */
+.why-section {
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-top: none;
+  padding: 28px;
+}
+
+.why-content p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 10px;
+}
+.why-content p:last-child { margin-bottom: 0; }
+
 .includes {
   background: #ffffff;
   border: 1px solid #e5e5e5;
@@ -134,105 +142,21 @@ body {
 .item-icon.purple { background: #eeedfe; }
 .item-text { font-size: 13px; line-height: 1.4; color: #1a1a1a; font-weight: 500; }
 
-/* ---- PARA QUIÉN ---- */
-.who-benefits {
-  background: #ffffff;
-  border: 1px solid #e5e5e5;
-  border-top: none;
-  padding: 24px 28px;
-}
-
-.audience-row {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 10px 0;
-  border-bottom: 1px solid #f2f2f2;
-  font-size: 14px;
-  color: #444;
-}
-.audience-row:last-child { border-bottom: none; padding-bottom: 0; }
-.audience-row:first-of-type { padding-top: 0; }
-
-.check {
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  background: #eaf3de;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  color: #3b6d11;
-  font-size: 12px;
-  font-weight: 700;
-}
-
-/* ---- BENEFICIOS ---- */
-.benefits-strip {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-  margin-top: 14px;
-}
-
-.benefit-card {
-  background: #ffffff;
-  border: 1px solid #e5e5e5;
-  border-radius: 12px;
-  padding: 16px;
-}
-
-.benefit-num {
-  font-size: 26px;
-  font-weight: 900;
-  color: #185fa5;
-  line-height: 1;
-  margin-bottom: 4px;
-}
-
-.benefit-desc { font-size: 12px; color: #888; line-height: 1.4; }
-
-/* ---- LO QUE RECIBIRÁS ---- */
-.preview-section {
-  background: #ffffff;
-  border: 1px solid #e5e5e5;
+.mid-cta {
+  background: linear-gradient(135deg, #0f1b35, #1a3a6e);
   border-radius: 14px;
-  padding: 28px;
+  padding: 28px 24px;
+  text-align: center;
   margin-top: 14px;
 }
 
-.preview-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
+.mid-cta p {
+  font-size: 15px;
+  color: rgba(255,255,255,0.75);
+  margin-bottom: 16px;
+  font-weight: 500;
 }
 
-.preview-card {
-  background: #f9f9f9;
-  border: 1px solid #ebebeb;
-  border-radius: 10px;
-  padding: 18px;
-}
-
-.preview-num {
-  font-size: 11px;
-  font-weight: 800;
-  color: #0070e0;
-  letter-spacing: 0.08em;
-  margin-bottom: 8px;
-}
-
-.preview-title {
-  font-size: 14px;
-  font-weight: 700;
-  color: #1a1a1a;
-  margin-bottom: 6px;
-}
-
-.preview-desc { font-size: 13px; color: #666; line-height: 1.55; }
-
-/* ---- KIT VS YOUTUBE ---- */
 .vs-section {
   background: #ffffff;
   border: 1px solid #e5e5e5;
@@ -267,61 +191,64 @@ body {
 .vs-bad  ul li::before { content: '✕'; position: absolute; left: 0; color: #e55; font-size: 10px; top: 2px; }
 .vs-good ul li::before { content: '✓'; position: absolute; left: 0; color: #3a3; font-size: 10px; top: 2px; }
 
-/* ---- BOTÓN INTERMEDIO ---- */
-.mid-cta {
-  background: linear-gradient(135deg, #0f1b35, #1a3a6e);
-  border-radius: 14px;
-  padding: 28px 24px;
-  text-align: center;
-  margin-top: 14px;
-}
-
-.mid-cta p {
-  font-size: 15px;
-  color: rgba(255,255,255,0.75);
-  margin-bottom: 16px;
-  font-weight: 500;
-}
-
-/* ---- TESTIMONIOS ---- */
-.testimonios-section {
+.who-benefits {
   background: #ffffff;
   border: 1px solid #e5e5e5;
   border-radius: 14px;
-  padding: 28px;
+  padding: 24px 28px;
   margin-top: 14px;
 }
 
-.testimonios-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+.audience-row {
+  display: flex;
+  align-items: center;
   gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid #f2f2f2;
+  font-size: 14px;
+  color: #444;
+}
+.audience-row:last-child { border-bottom: none; padding-bottom: 0; }
+.audience-row:first-of-type { padding-top: 0; }
+
+.check {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #eaf3de;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #3b6d11;
+  font-size: 12px;
+  font-weight: 700;
 }
 
-.testimonio-card {
-  background: #f9f9f9;
-  border: 1px solid #ebebeb;
-  border-radius: 10px;
+.benefits-strip {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.benefit-card {
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
   padding: 16px;
 }
 
-.testimonio-stars { font-size: 13px; margin-bottom: 8px; }
-
-.testimonio-texto {
-  font-size: 13px;
-  color: #555;
-  line-height: 1.6;
-  margin-bottom: 10px;
-  font-style: italic;
+.benefit-num {
+  font-size: 26px;
+  font-weight: 900;
+  color: #185fa5;
+  line-height: 1;
+  margin-bottom: 4px;
 }
 
-.testimonio-autor {
-  font-size: 11px;
-  font-weight: 600;
-  color: #999;
-}
+.benefit-desc { font-size: 12px; color: #888; line-height: 1.4; }
 
-/* ---- GARANTÍA ---- */
 .garantia-section {
   background: #fffbea;
   border: 1.5px solid #ffe08a;
@@ -335,7 +262,6 @@ body {
 .garantia-title { font-size: 16px; font-weight: 700; color: #1a1a1a; margin-bottom: 6px; }
 .garantia-desc { font-size: 13px; color: #666; line-height: 1.6; max-width: 440px; margin: 0 auto; }
 
-/* ---- SECCIÓN DE PAGO ---- */
 .payment-section {
   background: #ffffff;
   border: 1px solid #e5e5e5;
@@ -425,7 +351,6 @@ body {
   width: 100%;
 }
 
-/* ---- FOOTER CTA ---- */
 .footer-cta {
   background: linear-gradient(135deg, #0f1b35, #1a2d5a);
   border-radius: 14px;
@@ -461,15 +386,12 @@ body {
 .whatsapp-btn { background: #25d366; }
 .whatsapp-btn:hover { background: #1ebe5d; }
 
-/* ---- RESPONSIVE ---- */
 @media (max-width: 480px) {
   .hero { padding: 40px 20px 36px; }
   .hero h1 { font-size: 24px; }
   .items-grid { grid-template-columns: 1fr; }
   .benefits-strip { grid-template-columns: 1fr 1fr; }
-  .preview-grid { grid-template-columns: 1fr; }
   .vs-grid { grid-template-columns: 1fr; }
-  .testimonios-grid { grid-template-columns: 1fr; }
   .includes, .who-benefits, .payment-section,
-  .preview-section, .vs-section, .testimonios-section { padding: 20px 16px; }
+  .why-section, .vs-section { padding: 20px 16px; }
 }
