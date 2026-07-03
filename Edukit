@@ -6,6 +6,7 @@
 <meta name="description" content="Kit de Informática 2026 para estudiantes. Guías de HTML, CSS, JavaScript y MySQL con ejercicios y plantillas listas para usar.">
 <meta name="keywords" content="kit informatica, estudiar informatica, HTML CSS, programacion dominicana, bachillerato tecnico informatica">
     <title>EduKit — Explora el Futuro</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
     <style>
         /* --- Reset y Tipografía --- */
         * {
