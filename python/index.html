@@ -1,1 +1,533 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kit de Python 2026 — EduKit</title>
+  <link rel="shortcut icon" type="image/x-icon" href="https://img.icons8.com/color/48/python.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f0f2f5;
+      color: #1a1a1a;
+      padding: 24px 16px;
+    }
+
+    .kit-page { max-width: 680px; margin: 0 auto; }
+
+    .hero {
+      background: linear-gradient(135deg, #0d2b0d 0%, #1a4a1a 60%, #0d3b1a 100%);
+      border-radius: 16px 16px 0 0;
+      padding: 52px 32px 44px;
+      text-align: center;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(74,222,128,0.15);
+      color: #4ade80;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 20px;
+      border: 1px solid rgba(74,222,128,0.3);
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: 30px;
+      font-weight: 900;
+      color: #ffffff;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .hero h1 .py-g { color: #4ade80; }
+    .hero h1 .py-y { color: #facc15; }
+
+    .hero-sub {
+      font-size: 15px;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.6;
+      max-width: 420px;
+      margin: 0 auto 28px;
+    }
+
+    .price-block {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 12px;
+      padding: 12px 24px;
+    }
+
+    .price-label { color: rgba(255,255,255,0.5); font-size: 13px; }
+    .price-range { font-size: 22px; font-weight: 700; color: #ffffff; }
+
+    .cta-btn {
+      display: inline-block;
+      background: #16a34a;
+      color: #ffffff;
+      font-size: 15px;
+      font-weight: 600;
+      padding: 14px 36px;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: background 0.15s;
+      margin-top: 12px;
+    }
+    .cta-btn:hover { background: #15803d; }
+
+    .section-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 16px;
+    }
+
+    .why-section {
+      background: #ffffff;
+      border: 1px solid #e5e5e5;
+      border-top: none;
+      padding: 28px;
+    }
+
+    .why-content p {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.8;
+      margin-bottom: 10px;
+    }
+    .why-content p:last-child { margin-bottom: 0; }
+
+    .includes {
+      background: #ffffff;
+      border: 1px solid #e5e5e5;
+      border-top: none;
+      padding: 28px;
+    }
+
+    .items-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+    .item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 12px 14px;
+      background: #f9f9f9;
+      border: 1px solid #ebebeb;
+      border-radius: 10px;
+    }
+
+    .item.full-width { grid-column: 1 / -1; }
+
+    .item-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: #dcfce7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 15px;
+    }
+
+    .item-icon.yellow { background: #fef9c3; }
+    .item-text { font-size: 13px; line-height: 1.4; color: #1a1a1a; font-weight: 500; }
+
+    .mid-cta {
+      background: linear-gradient(135deg, #0d2b0d, #1a4a1a);
+      border-radius: 14px;
+      padding: 28px 24px;
+      text-align: center;
+      margin-top: 14px;
+    }
+
+    .mid-cta p {
+      font-size: 15px;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+
+    .vs-section {
+      background: #ffffff;
+      border: 1px solid #e5e5e5;
+      border-radius: 14px;
+      padding: 28px;
+      margin-top: 14px;
+    }
+
+    .vs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+    .vs-card { border-radius: 10px; padding: 18px; }
+    .vs-bad  { background: #fff5f5; border: 1.5px solid #fcc; }
+    .vs-good { background: #f0fff4; border: 1.5px solid #b2f0c5; }
+
+    .vs-title { font-size: 13px; font-weight: 700; margin-bottom: 12px; color: #1a1a1a; }
+    .vs-card ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .vs-card ul li { font-size: 13px; color: #555; line-height: 1.4; padding-left: 14px; position: relative; }
+    .vs-bad  ul li::before { content: '✕'; position: absolute; left: 0; color: #e55; font-size: 10px; top: 2px; }
+    .vs-good ul li::before { content: '✓'; position: absolute; left: 0; color: #3a3; font-size: 10px; top: 2px; }
+
+    .who-benefits {
+      background: #ffffff;
+      border: 1px solid #e5e5e5;
+      border-radius: 14px;
+      padding: 24px 28px;
+      margin-top: 14px;
+    }
+
+    .audience-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid #f2f2f2;
+      font-size: 14px;
+      color: #444;
+    }
+    .audience-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .audience-row:first-of-type { padding-top: 0; }
+
+    .check {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: #dcfce7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: #16a34a;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .benefits-strip {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .benefit-card {
+      background: #ffffff;
+      border: 1px solid #e5e5e5;
+      border-radius: 12px;
+      padding: 16px;
+    }
+
+    .benefit-num { font-size: 26px; font-weight: 900; color: #16a34a; line-height: 1; margin-bottom: 4px; }
+    .benefit-desc { font-size: 12px; color: #888; line-height: 1.4; }
+
+    .garantia-section {
+      background: #f0fff4;
+      border: 1.5px solid #b2f0c5;
+      border-radius: 14px;
+      padding: 24px;
+      text-align: center;
+      margin-top: 14px;
+    }
+
+    .garantia-icon { font-size: 32px; margin-bottom: 8px; }
+    .garantia-title { font-size: 16px; font-weight: 700; color: #1a1a1a; margin-bottom: 6px; }
+    .garantia-desc { font-size: 13px; color: #666; line-height: 1.6; max-width: 440px; margin: 0 auto; }
+
+    .payment-section {
+      background: #ffffff;
+      border: 1px solid #e5e5e5;
+      border-radius: 14px;
+      padding: 28px;
+      margin-top: 14px;
+    }
+
+    .payment-intro { font-size: 14px; color: #555; line-height: 1.6; margin-bottom: 20px; }
+
+    .paypal-box {
+      background: #f0fff4;
+      border: 1.5px solid #b2f0c5;
+      border-radius: 14px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      text-align: center;
+    }
+
+    .paypal-desc { font-size: 14px; color: #555; line-height: 1.6; max-width: 380px; }
+
+    .paypal-btn {
+      display: inline-block;
+      background: #16a34a;
+      color: #ffffff;
+      font-size: 15px;
+      font-weight: 700;
+      padding: 14px 40px;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+    .paypal-btn:hover { background: #15803d; }
+
+    .paypal-steps {
+      display: flex;
+      gap: 12px;
+      width: 100%;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      flex: 1;
+      min-width: 110px;
+      max-width: 150px;
+    }
+
+    .step-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #16a34a;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .step-text { font-size: 12px; color: #555; line-height: 1.4; text-align: center; }
+
+    .paypal-note {
+      font-size: 12px;
+      color: #16a34a;
+      background: #dcfce7;
+      border-radius: 8px;
+      padding: 10px 16px;
+      width: 100%;
+    }
+
+    .footer-cta {
+      background: linear-gradient(135deg, #0d2b0d, #1a4a1a);
+      border-radius: 14px;
+      padding: 36px 24px;
+      text-align: center;
+      margin-top: 14px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .footer-cta::before {
+      content: '🐍';
+      position: absolute;
+      font-size: 120px;
+      opacity: 0.04;
+      right: -10px;
+      bottom: -20px;
+      line-height: 1;
+    }
+
+    .footer-cta p {
+      color: rgba(255,255,255,0.65);
+      font-size: 15px;
+      margin-bottom: 18px;
+      line-height: 1.6;
+      position: relative;
+    }
+
+    .footer-cta strong { color: #ffffff; }
+
+    .whatsapp-btn { background: #25d366; }
+    .whatsapp-btn:hover { background: #1ebe5d; }
+
+    @media (max-width: 480px) {
+      .hero { padding: 40px 20px 36px; }
+      .hero h1 { font-size: 24px; }
+      .items-grid { grid-template-columns: 1fr; }
+      .benefits-strip { grid-template-columns: 1fr 1fr; }
+      .vs-grid { grid-template-columns: 1fr; }
+      .includes, .who-benefits, .payment-section,
+      .why-section, .vs-section { padding: 20px 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="kit-page">
+
+  <div class="hero">
+    <div class="hero-badge">✦ Edición 2026</div>
+    <h1>Kit de <span class="py-g">Py</span><span class="py-y">thon</span><br>para Estudiantes</h1>
+    <p class="hero-sub">Todo lo que necesitas para aprender Python, organizado y listo para usar desde el primer día.</p>
+    <div class="price-block">
+      <span class="price-label">Precio</span>
+      <span class="price-range">$10 · RD$600</span>
+    </div>
+    <br><br>
+    <a href="https://payhip.com/b/9ZbgR" target="_blank" class="cta-btn">Comprar ahora →</a>
+  </div>
+
+  <div class="why-section">
+    <div class="section-label">Por qué creé este kit</div>
+    <div class="why-content">
+      <p>Python es uno de los lenguajes más demandados del mundo, pero aprender con videos dispersos y documentación en inglés puede ser frustrante. Nadie te da todo organizado, en español y pensado para estudiantes de República Dominicana.</p>
+      <p>Por eso creé este kit: para que aprendas Python de forma práctica, rápida y sin complicaciones desde el primer día.</p>
+    </div>
+  </div>
+
+  <div class="includes">
+    <div class="section-label">Contenido del kit</div>
+    <div class="items-grid">
+      <div class="item">
+        <div class="item-icon">📘</div>
+        <div class="item-text">Guía completa de Python desde cero</div>
+      </div>
+      <div class="item">
+        <div class="item-icon">✏️</div>
+        <div class="item-text">Ejercicios prácticos con soluciones</div>
+      </div>
+      <div class="item">
+        <div class="item-icon">📝</div>
+        <div class="item-text">Apuntes de variables, listas y funciones</div>
+      </div>
+      <div class="item">
+        <div class="item-icon">🔁</div>
+        <div class="item-text">Estructuras de control y bucles</div>
+      </div>
+      <div class="item">
+        <div class="item-icon">🔗</div>
+        <div class="item-text">Recursos gratuitos recomendados</div>
+      </div>
+      <div class="item">
+        <div class="item-icon">✅</div>
+        <div class="item-text">Checklist para proyectos escolares</div>
+      </div>
+      <div class="item full-width">
+        <div class="item-icon yellow">🤖</div>
+        <div class="item-text">Herramientas de IA para estudiar y programar mejor</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mid-cta">
+    <p>Empieza hoy a programar con Python.</p>
+    <a href="https://payhip.com/b/9ZbgR" target="_blank" class="cta-btn">Obtener el kit →</a>
+  </div>
+
+  <div class="vs-section">
+    <div class="section-label">Kit vs YouTube</div>
+    <div class="vs-grid">
+      <div class="vs-card vs-bad">
+        <div class="vs-title">Videos de YouTube</div>
+        <ul>
+          <li>Horas de video en inglés o dispersas</li>
+          <li>Sin ejercicios ni ejemplos descargables</li>
+          <li>Tienes que tomar tus propios apuntes</li>
+          <li>No adaptado al programa dominicano</li>
+        </ul>
+      </div>
+      <div class="vs-card vs-good">
+        <div class="vs-title">Kit de Python 2026</div>
+        <ul>
+          <li>Todo organizado en un solo lugar</li>
+          <li>Ejercicios, apuntes y ejemplos incluidos</li>
+          <li>Guías cortas y directas al punto</li>
+          <li>Listo para usar desde el primer día</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="who-benefits">
+    <div class="section-label">Para quién es</div>
+    <div class="audience-row"><div class="check">✓</div> Estudiantes de bachillerato técnico en informática</div>
+    <div class="audience-row"><div class="check">✓</div> Universitarios que están comenzando con programación</div>
+    <div class="audience-row"><div class="check">✓</div> Personas que quieren aprender Python desde cero</div>
+  </div>
+
+  <div class="benefits-strip">
+    <div class="benefit-card">
+      <div class="benefit-num">+5h</div>
+      <div class="benefit-desc">ahorradas por semana buscando información</div>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-num">6+</div>
+      <div class="benefit-desc">temas clave en un solo lugar</div>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-num">100%</div>
+      <div class="benefit-desc">práctico, con ejemplos y soluciones</div>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-num">∞</div>
+      <div class="benefit-desc">acceso a tu material cuando lo necesites</div>
+    </div>
+  </div>
+
+  <div class="garantia-section">
+    <div class="garantia-icon">🛡️</div>
+    <div class="garantia-title">Garantía de 7 días</div>
+    <div class="garantia-desc">Si sientes que el kit no cumplió tus expectativas, escríbenos por WhatsApp y te ayudamos a resolverlo.</div>
+  </div>
+
+  <div class="payment-section" id="comprar">
+    <div class="section-label">Cómo obtenerlo</div>
+    <p class="payment-intro">Pago seguro a través de <strong>Payhip</strong> con PayPal. Recibes el kit automáticamente en tu correo.</p>
+
+    <div class="paypal-box">
+      <p class="paypal-desc">Disponible en República Dominicana y todo el mundo.</p>
+
+      <a href="https://payhip.com/b/9ZbgR" target="_blank" class="paypal-btn">
+        Comprar ahora →
+      </a>
+
+      <div class="paypal-steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-text">Completa el pago en Payhip</div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-text">Recibe el enlace de descarga en tu correo</div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-text">Descarga y empieza a aprender</div>
+        </div>
+      </div>
+
+      <div class="paypal-note">
+        🔒 Pagos protegidos por la política de protección al comprador de PayPal.
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-cta">
+    <p>¿Tienes dudas?<br><strong>Escríbenos y te respondemos de inmediato.</strong></p>
+    <a href="https://wa.me/18493421674?text=Hola,%20quiero%20comprar%20el%20Kit%20de%20Python%202026"
+       target="_blank" class="cta-btn whatsapp-btn">
+      💬 Consultar por WhatsApp
+    </a>
+  </div>
+
+</div>
+
+</body>
+</html>
